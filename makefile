@@ -26,4 +26,4 @@ depend:
 clean:
 	$(RM) $(OBJS) $(TARGET)
 
--makefile $(DEPS)
+-include $(DEPS)
