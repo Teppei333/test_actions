@@ -12,18 +12,18 @@ LDFLAGS = -1m
 
 all: $(TARGET)
 
-	$(TARGET): $(OBJS) $(HEADS)
+$(TARGET): $(OBJS) $(HEADS)
 	$(CXX) $(LDFLAGS) -o$@ $(OBJS)
 
-	run: all
+run: all
 	@./$(TARGET)
 
-	.PHONY: depend clean
-	depend:
-$(CXX) $(INCLUDES) -MM $(SRCS) > $(DEPS)
-@sed -i -E "s/^(.+?).o: ([^ ]+?)\1\2\1.o: \2\1/g" $(DEPS)
+.PHONY: depend clean
+depend:
+	$(CXX) $(INCLUDES) -MM $(SRCS) > $(DEPS)
+	@sed -i -E "s/^(.+?).o: ([^ ]+?)\1\2\1.o: \2\1/g" $(DEPS)
 
 clean:
-$(RM) $(OBJS) $(TARGET)
+	$(RM) $(OBJS) $(TARGET)
 
 -makefile $(DEPS)
