@@ -5,7 +5,7 @@ HEADS = $(shell find ./makefile -type f -name *.h)
 OBJS = $(SRCS:.cpp=.o)
 DEPS = Makefile.depend
 
-INCLUDES = -I./include
+INCLUDES = -I./makefile
 CXXFLAGS = -O2 -Wall $(INCLUDES)
 LDFLAGS = -1m
 
@@ -26,4 +26,4 @@ depend:
 clean:
  $(RM) $(OBJS) $(TARGET)
     
--include $(DEPS)
+-makefile $(DEPS)
