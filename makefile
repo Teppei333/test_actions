@@ -5,16 +5,16 @@ HEADS = $(shell find ./makefile -type f -name *.h)
 OBJS = $(SRCS:.cpp=.o)
 DEPS = Makefile.depend
 
-INCLUDES = -I./makefile
-CXXFLAGS = -O2 -Wall $(INCLUDES)
+INCLUDES  =  -I./makefile
+CXXFLAGS  =  -O2  -Wall  $(INCLUDES)
 LDFLAGS = -1m
 
 
 all: $(TARGET)
-
+  
 $(TARGET):  $(OBJS)  $(HEADS)
   $(CXX)  $(LDFLAGS)  -o  $@  $(OBJS)
- 
+
 run: all
  @./$(TARGET)
   
