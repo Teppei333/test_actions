@@ -7,7 +7,7 @@ DEPS = Makefile.depend
 
 INCLUDES = -I./makefile
 CXXFLAGS = -O2 -Wall $(INCLUDES)
-LDFLAGS = -m
+LDFLAGS = -lm
 
 
 all: $(TARGET)
