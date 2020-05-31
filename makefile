@@ -1,7 +1,7 @@
 TARGET = app
 
 SRCS  = $(shell find ./src     -type f -name *.cpp)
-HEADS = $(shell find ./main -type f -name *.h)
+HEADS = $(shell find ./test_actions -type f -name *.h)
 OBJS = $(SRCS:.cpp=.o)
 DEPS = Makefile.depend
 
@@ -26,4 +26,4 @@ depend:
 clean:
  $(RM) $(OBJS) $(TARGET)
     
--main $(DEPS)
+-test_actions $(DEPS)
