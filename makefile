@@ -1,7 +1,7 @@
 TARGET = app
 
 SRCS  = $(shell find ./src     -type f -name *.cpp)
-HEADS = $(shell find ./workflow -type f -name *.h)
+HEADS = $(shell find ./workflows -type f -name *.h)
 OBJS = $(SRCS:.cpp=.o)
 DEPS = Makefile.depend
 
